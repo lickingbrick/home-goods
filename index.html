@@ -201,5 +201,20 @@
         </p>
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 获取页面上所有的购买按钮 (类名为 buy-btn)
+            var buttons = document.querySelectorAll('.buy-btn');
+
+            buttons.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    // 仅发送标准的 'ClickButton' 事件，不带任何商品参数
+                    ttq.track('ClickButton');
+                    
+                    console.log('TikTok Event Sent: Generic ClickButton');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
